@@ -88,5 +88,10 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "echarts": "^6.0.0",
+    "vitepress-plugin-llms": "^1.12.2",
+    "vitepress-plugin-mermaid": "^2.0.17"
   }
 }
