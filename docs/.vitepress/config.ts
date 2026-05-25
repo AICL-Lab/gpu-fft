@@ -71,20 +71,14 @@ export default withMermaid(
           programmingLanguage: 'TypeScript',
           runtimePlatform: 'WebGPU',
           license: 'https://opensource.org/licenses/MIT',
-          keywords: [
-            'WebGPU',
-            'FFT',
-            'WGSL',
-            'signal processing',
-            'browser-native GPU compute',
-          ],
+          keywords: ['WebGPU', 'FFT', 'WGSL', 'signal processing', 'browser-native GPU compute'],
         }),
       ],
     ],
 
     cleanUrls: true,
     lastUpdated: true,
-    srcExclude: ['**/specs/**/*.md', 'superpowers/**'],
+    srcExclude: ['**/specs/**/*.md', '**/rfc/**/*.md'],
 
     sitemap: {
       hostname: siteUrl,
@@ -164,7 +158,8 @@ export default withMermaid(
         lang: 'en-US',
         link: '/en/',
         title: 'WebGPU FFT',
-        description: 'Technical whitepaper and architecture guide for a browser-native WebGPU FFT core',
+        description:
+          'Technical whitepaper and architecture guide for a browser-native WebGPU FFT core',
         themeConfig: {
           nav: [
             { text: 'Guides', link: '/en/guides/getting-started', activeMatch: '/en/guides/' },
@@ -245,6 +240,7 @@ export default withMermaid(
       socialLinks: [
         { icon: 'github', link: 'https://github.com/LessUp/gpu-fft' },
         { icon: 'npm', link: 'https://www.npmjs.com/package/webgpu-fft' },
+        { text: 'Changelog', link: 'https://github.com/LessUp/gpu-fft/blob/main/CHANGELOG.md' },
       ],
       footer: {
         message: 'Released under the MIT License.',
@@ -276,5 +272,5 @@ export default withMermaid(
         chunkSizeWarningLimit: 3000,
       },
     },
-  }),
+  })
 );

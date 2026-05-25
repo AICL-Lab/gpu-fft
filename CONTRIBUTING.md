@@ -5,7 +5,6 @@ Thank you for your interest in contributing to WebGPU FFT Library! This document
 ## Table of Contents
 
 - [Code of Conduct](#code-of-conduct)
-- [Spec-Driven Development](#spec-driven-development)
 - [Getting Started](#getting-started)
 - [Development Workflow](#development-workflow)
 - [Code Style](#code-style)
@@ -17,41 +16,6 @@ Thank you for your interest in contributing to WebGPU FFT Library! This document
 ## Code of Conduct
 
 This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project maintainers.
-
-## Spec-Driven Development
-
-This project follows **OpenSpec-driven development**. All non-trivial code changes must derive from the canonical specifications in `openspec/specs/` and from the relevant OpenSpec change artifacts in `openspec/changes/`.
-
-### Spec Directory Structure
-
-```
-openspec/
-├── specs/
-│   ├── product/       # Product requirements and user stories
-│   ├── rfc/           # Technical design documents (architecture decisions)
-│   ├── api/           # API interface specifications
-│   └── testing/       # Testing specifications and property definitions
-└── changes/           # Change proposals, design docs, and task lists
-```
-
-### Contribution Workflow
-
-1. **Read OpenSpec first** — Before writing code, review relevant docs in `openspec/specs/`
-2. **Propose before implementation** — For non-trivial features, fixes, or interface changes, create/update an OpenSpec change in `openspec/changes/`
-3. **Implement per spec** — Follow spec and design decisions exactly; do not expand scope opportunistically
-4. **Review cross-cutting work** — Architecture, public API, documentation information architecture, workflow, and governance changes require a `/review`-style checkpoint before merge
-5. **Test against specs** — Write tests that verify acceptance criteria and documented quality gates
-
-When submitting a PR, reference the relevant spec documents in your description.
-
-### Available Specifications
-
-| Spec Type | Location | Purpose |
-|-----------|----------|---------|
-| Product | `openspec/specs/product/webgpu-fft-library.md` | What to build |
-| Architecture | `openspec/specs/rfc/0001-webgpu-fft-library-architecture.md` | How it's designed |
-| API | `openspec/specs/api/public-api.md` | Interface contracts |
-| Testing | `openspec/specs/testing/testing-strategy.md` | Verification approach |
 
 ## Getting Started
 
@@ -93,13 +57,11 @@ When submitting a PR, reference the relevant spec documents in your description.
    git checkout -b fix/clear-short-name
    ```
 
-2. **For non-trivial changes, create or update an OpenSpec change** in `openspec/changes/`
+2. **Make focused changes** following the code style guidelines
 
-3. **Make focused changes** following the code style guidelines
+3. **Write or update tests** for behavior changes and bug fixes
 
-4. **Write or update tests** for behavior changes and bug fixes
-
-5. **Run the canonical validation chain**:
+4. **Run the canonical validation chain**:
    ```bash
    npm run lint
    npm run format:check
@@ -107,23 +69,21 @@ When submitting a PR, reference the relevant spec documents in your description.
    npm test
    ```
 
-6. **Run package/docs checks when affected**:
+5. **Run package/docs checks when affected**:
    ```bash
    npm run build
    npm run smoke:package
    npm run docs:build
    ```
 
-7. **Request review** for architecture, public API, docs IA, workflow, or governance changes
+6. **Commit your changes** following the commit message guidelines
 
-8. **Commit your changes** following the commit message guidelines
-
-9. **Push to your fork**:
+7. **Push to your fork**:
    ```bash
    git push origin fix/clear-short-name
    ```
 
-10. **Open a Pull Request** on GitHub
+8. **Open a Pull Request** on GitHub
 
 Avoid long-running parallel worktrees unless a change truly needs isolation. The repository is in a low-maintenance closeout phase, so unfinished branches should be merged, closed, or deleted quickly.
 
@@ -188,12 +148,9 @@ We use [fast-check](https://github.com/dubzzz/fast-check) for property-based tes
 - Test mathematical properties (e.g., FFT/IFFT round-trip)
 - Use generators to create random valid inputs
 - Run at least 100 iterations per property
-- Tag tests with the property number from the testing spec: `openspec/specs/testing/testing-strategy.md`
 
 Example:
 ```typescript
-// Feature: webgpu-fft-library, Property 1: FFT/IFFT Round-Trip
-// Validates: Requirements 3.1, 4.1, 4.4
 it('should satisfy FFT/IFFT round-trip property', () => {
   fc.assert(
     fc.property(fc.array(fc.float()), (input) => {
@@ -251,7 +208,7 @@ test(complex): add property tests for complex multiplication
     - Includes tests for new functionality
     - Passes all CI checks
     - Has no merge conflicts
-    - Updates README/docs/OpenSpec when public behavior changes
+    - Updates README/docs when public behavior changes
 
 2. **Fill out the PR template** completely
 
@@ -269,7 +226,6 @@ test(complex): add property tests for complex multiplication
 - [ ] `npm run lint && npm run format:check && npm run typecheck && npm test` passes locally
 - [ ] Commit messages follow conventions
 - [ ] PR description explains the changes
-- [ ] Relevant spec documents are updated (if applicable)
 
 ## Reporting Issues
 

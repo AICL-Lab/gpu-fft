@@ -9,7 +9,7 @@
 | Evaluator | Interviewers, maintainers, skeptical reviewers | [Homepage](/en/) → [Guided Start](/en/guides/getting-started) → [Architecture Overview](/architecture/overview) → [Benchmarks](/showcase/benchmarks) |
 | API reader | Engineers deciding whether to integrate | [Quick Start](/setup/quick-start) → [API Reference](/api/index) → [Browser Support](/setup/browser-support) |
 | DSP learner | Readers refreshing FFT theory | [Tutorials](/tutorials/introduction) → [Architecture Overview](/architecture/overview) → [Academic Papers](/reference/papers) |
-| Contributor | People likely to modify code or docs | [Architecture Overview](/architecture/overview) → [Architecture Decisions](/showcase/decisions) → [AI Tooling & LSP](/setup/ai-tooling) → [Contributing](/contributing) |
+| Contributor | People likely to modify code or docs | [Architecture Overview](/architecture/overview) → [Architecture Decisions](/showcase/decisions) → [AI Tooling & LSP](/setup/ai-tooling) → [Contributing](https://github.com/LessUp/gpu-fft/blob/main/CONTRIBUTING.md) |
 
 ## What each route answers
 

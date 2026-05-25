@@ -285,8 +285,6 @@ These are exploratory directions, not committed deliverables:
 
 Contributions welcome! Read the [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
 
-This project follows **OpenSpec-driven development** — see [`openspec/specs/`](openspec/specs/) for the canonical repository specifications and change workflow.
-
 ## 📄 License
 
 [MIT](LICENSE) © WebGPU FFT Library Contributors

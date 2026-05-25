@@ -11,10 +11,10 @@
 
 优先做：
 
-1. OpenSpec 真源统一
+1. 规范真源统一
 2. 文档去冗余、去漂移、去夸张叙事
 3. Workflow / hooks / release / Pages 简化
-4. README、docs、OpenSpec、GitHub About 的一致性修复
+4. README、docs、GitHub About 的一致性修复
 
 避免默认做：
 
@@ -24,16 +24,10 @@
 
 ## 规范来源
 
-详见 AGENTS.md §2 规范真源。
-
-- Canonical specs: `openspec/specs/`
-- Active changes: `openspec/changes/`
-- Project-wide agent guidance: `AGENTS.md`
-
-顶层 `/specs` 已移除，不再是 source of truth。
+详见 AGENTS.md。
 
 ## 工作流与质量门禁
 
-遵循 AGENTS.md §3 开发流程和 §6 质量门禁。
+遵循 AGENTS.md §2 质量门禁。
 
-关键项目事实见 AGENTS.md §7。
+关键项目事实见 AGENTS.md §3。
