@@ -1,6 +1,5 @@
 // Spectrum Analyzer - Real-time audio frequency spectrum analysis
 import type { SpectrumAnalyzerConfig, WindowType } from '../types';
-import type { FFTBackend } from '../core/backend';
 import { CPUFFTBackend } from '../utils/cpu-fft';
 import {
   hannWindow,
@@ -36,32 +35,26 @@ function getWindowFunction(type: WindowType): (size: number) => Float32Array {
  * Real-time audio frequency spectrum analyzer.
  *
  * @remarks
- * 默认使用 CPU 后端。可通过构造函数注入自定义 FFTBackend，
- * 例如 GPU 后端或测试用 mock。
+ * CPU-only utility。内部固定使用 CPU FFT 后端。
  *
  * @example
  * ```typescript
- * // 使用默认 CPU 后端
  * const analyzer = createSpectrumAnalyzer({
  *   fftSize: 2048,
  *   sampleRate: 44100
  * });
- *
- * // 注入自定义后端
- * const gpuBackend = await createGPUFFTBackend();
- * const analyzer = new SpectrumAnalyzer(config, gpuBackend);
  * ```
  */
 export class SpectrumAnalyzer {
   private config: SpectrumAnalyzerConfig;
   private window: Float32Array;
   private complexInput: Float32Array;
-  private backend: FFTBackend;
+  private backend: CPUFFTBackend;
 
-  constructor(config: SpectrumAnalyzerConfig, backend?: FFTBackend) {
+  constructor(config: SpectrumAnalyzerConfig) {
     validateSpectrumAnalyzerConfig(config);
     this.config = { windowType: 'hann', ...config };
-    this.backend = backend ?? new CPUFFTBackend();
+    this.backend = new CPUFFTBackend();
     const windowFn = getWindowFunction(this.config.windowType!);
     this.window = windowFn(config.fftSize);
     this.complexInput = new Float32Array(config.fftSize * 2);
@@ -127,22 +120,13 @@ export class SpectrumAnalyzer {
  * 创建频谱分析器
  *
  * @param config - 配置
- * @param backend - 可选的自定义 FFT 后端（用于 GPU 加速或测试）
  * @returns SpectrumAnalyzer 实例
  *
  * @example
  * ```typescript
- * // 使用默认 CPU 后端
  * const analyzer = createSpectrumAnalyzer({ fftSize: 2048, sampleRate: 44100 });
- *
- * // 使用 GPU 后端
- * const gpuBackend = await createFFTEngine();
- * const analyzer = createSpectrumAnalyzer({ fftSize: 2048, sampleRate: 44100 }, gpuBackend);
  * ```
  */
-export function createSpectrumAnalyzer(
-  config: SpectrumAnalyzerConfig,
-  backend?: FFTBackend
-): SpectrumAnalyzer {
-  return new SpectrumAnalyzer(config, backend);
+export function createSpectrumAnalyzer(config: SpectrumAnalyzerConfig): SpectrumAnalyzer {
+  return new SpectrumAnalyzer(config);
 }

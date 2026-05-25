@@ -73,8 +73,8 @@ function validateFFT2DInput(input: Float32Array, width: number, height: number):
 ## Application Utilities
 
 ```typescript
-async function createSpectrumAnalyzer(config: SpectrumAnalyzerConfig): Promise<SpectrumAnalyzer>;
-async function createImageFilter(config: ImageFilterConfig): Promise<ImageFilter>;
+function createSpectrumAnalyzer(config: SpectrumAnalyzerConfig): SpectrumAnalyzer;
+function createImageFilter(config: ImageFilterConfig): ImageFilter;
 ```
 
 ```typescript

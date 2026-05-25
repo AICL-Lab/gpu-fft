@@ -9,9 +9,9 @@ Frequency domain filtering converts an image to frequency space, applies a filte
 ## Using the Image Filter API
 
 ```ts
-import { createFFTEngine, createImageFilter } from 'webgpu-fft';
+import { createImageFilter } from 'webgpu-fft';
 
-const filter = await createImageFilter({
+const filter = createImageFilter({
   type: 'lowpass',
   shape: 'ideal',
   cutoffFrequency: 0.3,
@@ -21,7 +21,7 @@ const filter = await createImageFilter({
 const blurred = await filter.apply(imageData, 512, 512);
 
 // Apply high-pass filter (edge detection)
-const edgeFilter = await createImageFilter({
+const edgeFilter = createImageFilter({
   type: 'highpass',
   shape: 'gaussian',
   cutoffFrequency: 0.1,

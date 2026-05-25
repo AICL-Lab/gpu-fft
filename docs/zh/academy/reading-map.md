@@ -9,7 +9,7 @@
 | 评估路线 | 面试官、维护者、审查者 | [首页](/zh/) → [起步导读](/zh/guides/getting-started) → [架构总览](/zh/architecture/overview) → [性能基准](/zh/showcase/benchmarks) |
 | API 路线 | 想判断能否快速接入的工程师 | [快速开始](/zh/setup/quick-start) → [API 参考](/api/index) → [Browser Support](/setup/browser-support) |
 | 学习路线 | 想补 FFT / WebGPU 背景的读者 | [教程入口](/tutorials/introduction) → [架构总览](/zh/architecture/overview) → [Academic Papers](/reference/papers) |
-| 贡献路线 | 可能修改代码或文档的人 | [架构总览](/zh/architecture/overview) → [架构决策](/zh/showcase/decisions) → [AI Tooling & LSP](/setup/ai-tooling) → [贡献指南](https://github.com/LessUp/gpu-fft/blob/main/CONTRIBUTING.md) |
+| 贡献路线 | 可能修改代码或文档的人 | [架构总览](/zh/architecture/overview) → [架构决策](/zh/showcase/decisions) → [API Contract](/reference/api-contract) → [贡献指南](https://github.com/LessUp/gpu-fft/blob/main/CONTRIBUTING.md) |
 
 ## 每条路线分别回答什么
 
@@ -32,7 +32,7 @@
   <article class="chapter-card">
     <p class="chapter-index">贡献路线</p>
     <h3>怎样改才是安全的？</h3>
-    <p>优先看 OpenSpec 真源、架构决策记录和仓库的低维护约束。</p>
+    <p>优先看 API/文档真源、架构决策记录和仓库的低维护约束。</p>
   </article>
 </div>
 

@@ -1,6 +1,5 @@
 // Image Filter - Apply frequency-domain filters to images
 import type { ImageFilterConfig } from '../types';
-import type { FFTBackend } from '../core/backend';
 import { CPUFFTBackend } from '../utils/cpu-fft';
 import { validateFFT2D } from '../core/validation';
 import { validateImageFilterConfig } from '../core/validation';
@@ -12,34 +11,28 @@ const MIN_GAUSSIAN_SIGMA = 0.01;
  * Apply frequency-domain filters to images (lowpass, highpass, bandpass).
  *
  * @remarks
- * 默认使用 CPU 后端。可通过构造函数注入自定义 FFTBackend，
- * 例如 GPU 后端或测试用 mock。
+ * CPU-only utility。内部固定使用 CPU 2D FFT 后端。
  *
  * @example
  * ```typescript
- * // 使用默认 CPU 后端
  * const filter = createImageFilter({
  *   type: 'lowpass',
  *   shape: 'gaussian',
  *   cutoffFrequency: 0.3
  * });
- *
- * // 注入自定义后端
- * const gpuBackend = await createGPUFFTBackend();
- * const filter = new ImageFilter(config, gpuBackend);
  * ```
  */
 export class ImageFilter {
   private config: ImageFilterConfig;
-  private backend: FFTBackend;
+  private backend: CPUFFTBackend;
 
-  constructor(config: ImageFilterConfig, backend?: FFTBackend) {
+  constructor(config: ImageFilterConfig) {
     validateImageFilterConfig(config);
     this.config = {
       ...config,
       bandwidth: config.bandwidth ?? DEFAULT_BANDWIDTH,
     };
-    this.backend = backend ?? new CPUFFTBackend();
+    this.backend = new CPUFFTBackend();
   }
 
   async apply(imageData: Float32Array, width: number, height: number): Promise<Float32Array> {
@@ -131,23 +124,17 @@ export class ImageFilter {
  * 创建图像滤波器
  *
  * @param config - 配置
- * @param backend - 可选的自定义 FFT 后端（用于 GPU 加速或测试）
  * @returns ImageFilter 实例
  *
  * @example
  * ```typescript
- * // 使用默认 CPU 后端
  * const filter = createImageFilter({
  *   type: 'lowpass',
  *   shape: 'gaussian',
  *   cutoffFrequency: 0.3
  * });
- *
- * // 使用 GPU 后端
- * const gpuBackend = await createFFTEngine();
- * const filter = createImageFilter(config, gpuBackend);
  * ```
  */
-export function createImageFilter(config: ImageFilterConfig, backend?: FFTBackend): ImageFilter {
-  return new ImageFilter(config, backend);
+export function createImageFilter(config: ImageFilterConfig): ImageFilter {
+  return new ImageFilter(config);
 }

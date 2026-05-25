@@ -13,7 +13,7 @@ Creates a spectrum analyzer instance.
 ```ts
 function createSpectrumAnalyzer(
   config: SpectrumAnalyzerConfig
-): Promise<SpectrumAnalyzer>;
+): SpectrumAnalyzer;
 ```
 
 ### Example
@@ -21,7 +21,7 @@ function createSpectrumAnalyzer(
 ```ts
 import { createSpectrumAnalyzer, WindowType } from 'webgpu-fft';
 
-const analyzer = await createSpectrumAnalyzer({
+const analyzer = createSpectrumAnalyzer({
   fftSize: 2048,
   windowType: 'hann',
   sampleRate: 44100,

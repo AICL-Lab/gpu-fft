@@ -16,7 +16,7 @@
 ## Risk and scope
 
 - Public API changed: yes / no
-- README/docs/OpenSpec updated where needed: yes / no
+- README/docs/CHANGELOG updated where needed: yes / no
 - CPU-only vs GPU-accelerated boundaries preserved: yes / no
 
 ## Review notes

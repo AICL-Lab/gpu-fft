@@ -96,7 +96,7 @@ async function main(): Promise<void> {
     console.log(
       `Creating spectrum analyzer (FFT size: ${fftSize}, sample rate: ${sampleRate} Hz)...`
     );
-    const analyzer = await createSpectrumAnalyzer({
+    const analyzer = createSpectrumAnalyzer({
       fftSize: fftSize as 256 | 512 | 1024 | 2048 | 4096,
       sampleRate,
     });

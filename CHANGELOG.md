@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Enhanced README with improved layout
 - Updated documentation standards
+- Removed repository-local AI governance layers (`openspec/`, `.claude/`, and tool-specific instruction files) and collapsed guidance to lightweight maintenance docs.
+- Simplified the docs stack by removing the AI tooling page, the duplicated docs changelog surface, and the `vitepress-plugin-llms` dependency.
+- Made `createSpectrumAnalyzer()` and `createImageFilter()` explicitly CPU-only by removing the unused backend-injection seam and aligning examples/docs with the synchronous factory API.
+- Simplified repository maintenance by dropping `husky`, `lint-staged`, and unused `typedoc` configuration.
 
 ## [1.1.0] - 2026-04-16
 

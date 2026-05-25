@@ -9,19 +9,20 @@ The library provides a `SpectrumAnalyzer` utility that wraps the FFT engine with
 ## Basic Usage
 
 ```ts
-import { createSpectrumAnalyzer, WindowType } from 'webgpu-fft';
+import { createSpectrumAnalyzer } from 'webgpu-fft';
 
-const analyzer = await createSpectrumAnalyzer({
+const sampleRate = 44100;
+const analyzer = createSpectrumAnalyzer({
   fftSize: 2048,
-  windowType: WindowType.Hann,
-  sampleRate: 44100,
+  windowType: 'hann',
+  sampleRate,
 });
 
 // Analyze audio buffer (Float32Array from Web Audio API)
 const audioBuffer = new Float32Array(2048);
 // ... fill with audio samples ...
 
-const spectrum = analyzer.analyze(audioBuffer);
+const spectrum = await analyzer.analyze(audioBuffer);
 
 // spectrum contains dB values ready for visualization
 ```
@@ -49,7 +50,8 @@ function drawSpectrum(canvas: HTMLCanvasElement, spectrum: Float32Array) {
 ## Frequency Bins
 
 ```ts
-const frequencyResolution = analyzer.sampleRate / analyzer.fftSize;
+const frequencies = analyzer.getFrequencies();
+const frequencyResolution = frequencies[1] - frequencies[0];
 console.log(`Each bin represents ${frequencyResolution} Hz`);
 
 // Get frequency for a specific bin
