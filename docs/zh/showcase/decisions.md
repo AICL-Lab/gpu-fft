@@ -27,7 +27,7 @@
 
 **问题：** 把整个库都描述成“GPU 加速信号处理”很诱人，但这会模糊真实能力边界。  
 **决策：** 在后端现实改变之前，坚持把 spectrum analysis 和 image filtering 写成 CPU-only utility。  
-**为什么优于替代方案：** 这样能保证 README、Pages 和 OpenSpec 始终一致，不会让站点比代码更浮夸。  
+**为什么优于替代方案：** 这样能保证 README、Pages 和 API 文档始终一致，不会让站点比代码更浮夸。  
 **后果：** 公开叙事看上去更窄，但也更经得起追问。
 
 ## 决策 05：收尾阶段的稳定性优先于投机式优化
@@ -41,5 +41,6 @@
 
 - [架构总览](/zh/architecture/overview)
 - [性能基准](/zh/showcase/benchmarks)
-- [RFC 0001](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0001-webgpu-fft-library-architecture.md)
-- [RFC 0003](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0003-2d-fft-transpose-strategy.md)
+- [RFC 0001](/architecture/rfc/0001-webgpu-fft-library-architecture)
+- [RFC 0003](/architecture/rfc/0003-2d-fft-transpose-strategy)
+- [API Contract](/reference/api-contract)

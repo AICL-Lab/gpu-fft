@@ -122,7 +122,7 @@ const frequencies = analyzer.getFrequencies();  // Hz per bin
 ```typescript
 import { createImageFilter } from 'webgpu-fft';
 
-const filter = await createImageFilter({
+const filter = createImageFilter({
   type: 'lowpass',
   shape: 'gaussian',
   cutoffFrequency: 0.3,
@@ -132,7 +132,7 @@ const filter = await createImageFilter({
 const blurred = await filter.apply(imageData, 512, 512);
 
 // High-pass filter (edge detection)
-const edgeFilter = await createImageFilter({
+const edgeFilter = createImageFilter({
   type: 'highpass',
   shape: 'gaussian',
   cutoffFrequency: 0.1,

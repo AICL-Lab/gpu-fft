@@ -218,7 +218,7 @@ export interface FFTEngineConfig {
  *   fftSize: 1024,
  *   sampleRate: 44100
  * };
- * const analyzer = await createSpectrumAnalyzer(config);
+ * const analyzer = createSpectrumAnalyzer(config);
  * ```
  */
 export interface SpectrumAnalyzerConfig {

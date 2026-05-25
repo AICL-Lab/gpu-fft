@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress';
 import { withMermaid } from 'vitepress-plugin-mermaid';
-import llmstxt from 'vitepress-plugin-llms';
 
 const rawBase = process.env.VITEPRESS_BASE;
 const base = rawBase
@@ -107,7 +106,6 @@ export default withMermaid(
                   { text: '起步导读', link: '/zh/guides/getting-started' },
                   { text: '快速开始', link: '/zh/setup/quick-start' },
                   { text: 'Browser Support (EN)', link: '/setup/browser-support' },
-                  { text: 'AI Tooling (EN)', link: '/setup/ai-tooling' },
                 ],
               },
             ],
@@ -176,7 +174,6 @@ export default withMermaid(
                   { text: 'Guided Start', link: '/en/guides/getting-started' },
                   { text: 'Quick Start', link: '/setup/quick-start' },
                   { text: 'Browser Support', link: '/setup/browser-support' },
-                  { text: 'AI Tooling & LSP', link: '/setup/ai-tooling' },
                 ],
               },
             ],
@@ -261,7 +258,6 @@ export default withMermaid(
 
     vite: {
       publicDir: '.vitepress/public',
-      plugins: [llmstxt()],
       resolve: {
         alias: {
           '@': '/.vitepress',

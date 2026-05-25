@@ -121,7 +121,7 @@ const frequencies = analyzer.getFrequencies();  // 每个 bin 对应的 Hz
 ```typescript
 import { createImageFilter } from 'webgpu-fft';
 
-const filter = await createImageFilter({
+const filter = createImageFilter({
   type: 'lowpass',
   shape: 'gaussian',
   cutoffFrequency: 0.3,
@@ -131,7 +131,7 @@ const filter = await createImageFilter({
 const blurred = await filter.apply(imageData, 512, 512);
 
 // 高通滤波（边缘检测）
-const edgeFilter = await createImageFilter({
+const edgeFilter = createImageFilter({
   type: 'highpass',
   shape: 'gaussian',
   cutoffFrequency: 0.1,
@@ -282,8 +282,6 @@ npx serve examples/web
 ## 🤝 贡献
 
 欢迎贡献！请阅读[贡献指南](CONTRIBUTING.md)和[行为准则](CODE_OF_CONDUCT.md)。
-
-本项目遵循 **OpenSpec 驱动开发** — 规范真源位于 [`openspec/specs/`](openspec/specs/)，所有非平凡改动都应通过 OpenSpec 变更流程推进。
 
 ## 📄 许可证
 

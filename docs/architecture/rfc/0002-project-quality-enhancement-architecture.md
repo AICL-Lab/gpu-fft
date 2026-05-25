@@ -12,14 +12,11 @@ vue: false
 
 ## Context
 
-This RFC records the original quality-enhancement architecture for the WebGPU FFT Library. It remains useful as historical context, but the repository is now in a closeout-oriented normalization phase where `openspec/` is the canonical source of truth and legacy documentation/automation patterns are being reduced.
+This RFC records the original quality-enhancement architecture for the WebGPU FFT Library. It remains useful as historical context, but the repository has since removed the repository-local AI governance layer and simplified the maintenance surface.
 
 ## Documentation Structure
 
-```
-openspec/
-├── specs/              # Canonical repository specifications
-└── changes/            # Proposal / design / task artifacts
+```text
 docs/
 ├── index.md            # Pages landing and project positioning
 ├── setup/              # Environment setup guides
@@ -52,7 +49,6 @@ docs/
 |------|---------|
 | ESLint (flat config) | TypeScript linting |
 | Prettier | Code formatting |
-| Husky + lint-staged | Pre-commit hooks |
 | TypeScript strict mode | Type safety |
 
 ## Testing Strategy
@@ -64,10 +60,12 @@ docs/
 
 ## Implementation Notes
 
-The authoritative contract for the closeout governance effort now lives in:
+The current authoritative surfaces now live in:
 
-- `openspec/specs/index.md`
-- `openspec/changes/project-closeout-normalization/`
+- `src/`
+- `README.md`
+- `docs/reference/api-contract.md`
+- `CHANGELOG.md`
 
 ### Priority Levels
 

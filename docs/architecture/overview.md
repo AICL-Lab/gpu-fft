@@ -44,13 +44,13 @@
 | Core engine | `src/core/fft-engine.ts`, `src/core/gpu-fft-backend.ts` | Validation, resource lifetime, plan reuse |
 | Shader truth | `src/shaders/sources.ts` | Canonical WGSL source strings |
 | CPU utilities | `src/utils/**`, `src/apps/**` | Fallback path plus CPU-only helpers |
-| Specifications | `openspec/specs/**` | Product, API, testing, and governance truth |
+| Architecture notes | `docs/architecture/rfc/**` | Historical design context retained as normal documentation |
 
-## Read these RFCs next
+## Read these architecture notes next
 
-- [RFC 0001: WebGPU FFT Library Architecture](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0001-webgpu-fft-library-architecture.md)
-- [RFC 0003: 2D FFT Transpose Strategy](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0003-2d-fft-transpose-strategy.md)
-- [Public API alignment spec](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/public-api-alignment/spec.md)
+- [RFC 0001: WebGPU FFT Library Architecture](/architecture/rfc/0001-webgpu-fft-library-architecture)
+- [RFC 0003: 2D FFT Transpose Strategy](/architecture/rfc/0003-2d-fft-transpose-strategy)
+- [API Contract](/reference/api-contract)
 
 ## What this architecture intentionally does not do
 

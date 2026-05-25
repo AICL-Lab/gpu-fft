@@ -27,7 +27,7 @@
 
 **Problem:** It is tempting to describe the whole library as “GPU-accelerated signal processing,” but that blurs the actual product slice.  
 **Decision:** Keep spectrum analysis and image filtering documented as CPU-only utilities until their backend reality changes.  
-**Why this beats the alternatives:** It keeps README, Pages, and OpenSpec in alignment and prevents the site from becoming less credible than the code.  
+**Why this beats the alternatives:** It keeps README, Pages, and API documentation in alignment and prevents the site from becoming less credible than the code.  
 **Consequence:** The public narrative is narrower, but far more defensible.
 
 ## Decision 05: Closeout-stage stability outranks speculative optimization
@@ -41,5 +41,6 @@
 
 - [Architecture Overview](/architecture/overview)
 - [Benchmarks](/showcase/benchmarks)
-- [RFC 0001](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0001-webgpu-fft-library-architecture.md)
-- [RFC 0003](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0003-2d-fft-transpose-strategy.md)
+- [RFC 0001](/architecture/rfc/0001-webgpu-fft-library-architecture)
+- [RFC 0003](/architecture/rfc/0003-2d-fft-transpose-strategy)
+- [API Contract](/reference/api-contract)

@@ -44,13 +44,13 @@
 | 核心引擎 | `src/core/fft-engine.ts`, `src/core/gpu-fft-backend.ts` | 校验、资源生命周期、plan 复用 |
 | Shader 真源 | `src/shaders/sources.ts` | Canonical WGSL source strings |
 | CPU 工具层 | `src/utils/**`, `src/apps/**` | 回退路径与 CPU-only helper |
-| 规范真源 | `openspec/specs/**` | 产品、API、测试与治理真源 |
+| 架构说明 | `docs/architecture/rfc/**` | 以普通文档形式保留的历史设计上下文 |
 
-## 建议顺着读的 RFC
+## 建议顺着读的架构说明
 
-- [RFC 0001：WebGPU FFT Library Architecture](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0001-webgpu-fft-library-architecture.md)
-- [RFC 0003：2D FFT Transpose Strategy](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/rfc/0003-2d-fft-transpose-strategy.md)
-- [Public API alignment spec](https://github.com/LessUp/gpu-fft/blob/master/openspec/specs/public-api-alignment/spec.md)
+- [RFC 0001：WebGPU FFT Library Architecture](/architecture/rfc/0001-webgpu-fft-library-architecture)
+- [RFC 0003：2D FFT Transpose Strategy](/architecture/rfc/0003-2d-fft-transpose-strategy)
+- [API Contract](/reference/api-contract)
 
 ## 这套架构刻意不做什么
 

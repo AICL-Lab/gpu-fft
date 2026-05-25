@@ -13,7 +13,7 @@ Creates an image filter instance.
 ```ts
 function createImageFilter(
   config: ImageFilterConfig
-): Promise<ImageFilter>;
+): ImageFilter;
 ```
 
 ### Example
@@ -21,7 +21,7 @@ function createImageFilter(
 ```ts
 import { createImageFilter, FilterType } from 'webgpu-fft';
 
-const filter = await createImageFilter({
+const filter = createImageFilter({
   type: 'lowpass',
   shape: 'gaussian',
   cutoffFrequency: 0.3,
@@ -55,7 +55,7 @@ apply(
 // Low-pass filter (blur)
 const blurred = await filter.apply(imageData, 512, 512);
 
-const edgeFilter = await createImageFilter({
+const edgeFilter = createImageFilter({
   type: 'highpass',
   shape: 'gaussian',
   cutoffFrequency: 0.1,

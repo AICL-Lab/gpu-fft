@@ -124,7 +124,7 @@ async function main(): Promise<void> {
 
     // Test 1: Ideal Low-Pass Filter
     console.log('--- Test 1: Ideal Low-Pass Filter ---');
-    const idealLowPass = await createImageFilter({
+    const idealLowPass = createImageFilter({
       type: 'lowpass',
       shape: 'ideal',
       cutoffFrequency: 0.2,
@@ -151,7 +151,7 @@ async function main(): Promise<void> {
 
     // Test 2: Gaussian Low-Pass Filter
     console.log('--- Test 2: Gaussian Low-Pass Filter ---');
-    const gaussianLowPass = await createImageFilter({
+    const gaussianLowPass = createImageFilter({
       type: 'lowpass',
       shape: 'gaussian',
       cutoffFrequency: 0.2,
@@ -178,7 +178,7 @@ async function main(): Promise<void> {
 
     // Test 3: Ideal High-Pass Filter
     console.log('--- Test 3: Ideal High-Pass Filter ---');
-    const idealHighPass = await createImageFilter({
+    const idealHighPass = createImageFilter({
       type: 'highpass',
       shape: 'ideal',
       cutoffFrequency: 0.1,
@@ -201,7 +201,7 @@ async function main(): Promise<void> {
 
     // Test 4: Gaussian High-Pass Filter
     console.log('--- Test 4: Gaussian High-Pass Filter ---');
-    const gaussianHighPass = await createImageFilter({
+    const gaussianHighPass = createImageFilter({
       type: 'highpass',
       shape: 'gaussian',
       cutoffFrequency: 0.1,
