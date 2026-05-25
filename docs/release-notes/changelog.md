@@ -2,9 +2,7 @@
 outline: deep
 ---
 
-# Changelog
-
-> This page is auto-generated from the root [CHANGELOG.md](https://github.com/LessUp/gpu-fft/blob/main/CHANGELOG.md).
+> This page is auto-generated from the root [CHANGELOG.md](https://github.com/AICL-Lab/gpu-fft/blob/main/CHANGELOG.md).
 
 # Changelog
 

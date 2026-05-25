@@ -80,15 +80,15 @@ This RFC describes the technical architecture of the WebGPU FFT Library, a high-
 
 **Rationale**: WebGPU Shading Language (WGSL) is the native shader language for WebGPU, providing:
 - First-class support in WebGPU API
-- Type safety with vec2<f32> for complex numbers
+- Type safety with `vec2<f32>` for complex numbers
 - Cross-browser compatibility (no compilation step)
 
 ### Decision 3: Interleaved Complex Number Format
 
-**Rationale**: Using interleaved `[real, imag, real, imag, ...]` format in Float32Array:
+**Rationale**: Using interleaved `[real, imag, real, imag, ...]` format in `Float32Array`:
 - Matches industry standard (FFTW, cuFFT use similar layouts)
 - Simplifies memory management (single buffer)
-- Enables efficient vec2<f32> loading in WGSL
+- Enables efficient `vec2<f32>` loading in WGSL
 
 ### Decision 4: Shared Memory with Bank Conflict Padding
 

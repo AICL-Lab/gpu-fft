@@ -11,7 +11,8 @@ const base = rawBase
     : `/${rawBase}/`
   : '/';
 
-const siteUrl = 'https://lessup.github.io/gpu-fft/';
+const siteUrl = 'https://aicl-lab.github.io/gpu-fft/';
+const repoUrl = 'https://github.com/AICL-Lab/gpu-fft';
 
 export default withMermaid(
   defineConfig({
@@ -67,7 +68,7 @@ export default withMermaid(
           name: 'WebGPU FFT',
           description:
             'Technical whitepaper and architecture guide for a browser-native WebGPU FFT core',
-          codeRepository: 'https://github.com/LessUp/gpu-fft',
+          codeRepository: repoUrl,
           programmingLanguage: 'TypeScript',
           runtimePlatform: 'WebGPU',
           license: 'https://opensource.org/licenses/MIT',
@@ -78,8 +79,6 @@ export default withMermaid(
 
     cleanUrls: true,
     lastUpdated: true,
-    srcExclude: ['**/specs/**/*.md', '**/rfc/**/*.md'],
-
     sitemap: {
       hostname: siteUrl,
     },
@@ -140,7 +139,7 @@ export default withMermaid(
             ],
           },
           editLink: {
-            pattern: 'https://github.com/LessUp/gpu-fft/edit/master/docs/:path',
+            pattern: `${repoUrl}/edit/master/docs/:path`,
             text: '在 GitHub 上编辑此页',
           },
           docFooter: {
@@ -220,7 +219,7 @@ export default withMermaid(
             ],
           },
           editLink: {
-            pattern: 'https://github.com/LessUp/gpu-fft/edit/master/docs/:path',
+            pattern: `${repoUrl}/edit/master/docs/:path`,
             text: 'Edit this page on GitHub',
           },
         },
@@ -238,16 +237,16 @@ export default withMermaid(
         },
       },
       socialLinks: [
-        { icon: 'github', link: 'https://github.com/LessUp/gpu-fft' },
+        { icon: 'github', link: repoUrl },
         { icon: 'npm', link: 'https://www.npmjs.com/package/webgpu-fft' },
-        { text: 'Changelog', link: 'https://github.com/LessUp/gpu-fft/blob/main/CHANGELOG.md' },
+        { text: 'Changelog', link: `${repoUrl}/blob/main/CHANGELOG.md` },
       ],
       footer: {
         message: 'Released under the MIT License.',
         copyright: 'Copyright © 2024-2026 WebGPU FFT Contributors',
       },
       editLink: {
-        pattern: 'https://github.com/LessUp/gpu-fft/edit/master/docs/:path',
+        pattern: `${repoUrl}/edit/master/docs/:path`,
         text: 'Edit this page on GitHub',
       },
       sidebarMenuLabel: 'Menu',

@@ -101,12 +101,12 @@ fn transpose(@builtin(global_invocation_id) global_id: vec3<u32>) {
 ### 中性
 
 - 架构文档应说明此设计决策
-- 未来优化时需创建新的 OpenSpec change
+- 未来优化时需创建新的 RFC/实施计划
 
 ## Related
 
-- [`src/core/fft-engine.ts`](../../src/core/fft-engine.ts) - 2D FFT 实现
-- [`AGENTS.md`](../../AGENTS.md) - 项目收尾约束
+- [`src/core/fft-engine.ts`](https://github.com/AICL-Lab/gpu-fft/blob/main/src/core/fft-engine.ts) - 2D FFT 实现
+- [`AGENTS.md`](https://github.com/AICL-Lab/gpu-fft/blob/main/AGENTS.md) - 项目收尾约束
 
 ## History
 
